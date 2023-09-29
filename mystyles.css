@@ -1,0 +1,21 @@
+body {
+    background-color: purple;
+    text-align: center;
+}
+
+p,
+h1 {
+    color: red;
+}
+
+h1 {
+    background-color: lightblue;
+}
+
+#para1 {
+    color: red;
+}
+
+.colortext {
+    color: red;
+}

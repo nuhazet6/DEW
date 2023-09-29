@@ -6,9 +6,23 @@
     <title>
         HTML structure
     </title>
+    <!--CSS-->
+    <!--This is a bad practice:-->
+    <style>
+        body {
+            background-color: grey;
+            font-family: courier;
+            color: white;
+        }
+
+        p {
+            border: 1px solid yellow;
+        }
+    </style>
 </head>
 
 <body>
+    <!--Attributes, Headings, Paragraphs and Styles-->
     <h1>This is the most important Heading</h1>
     <p>This is a paragraph.</p>
     <h2>This is the next most important Heading</h2>
@@ -36,10 +50,24 @@
     Oh, bring back my Bonnie to me.
 
     </pre>
+    <!--Formatting-->
     <p>WWF's mission is to stop the <strong>degradation</strong> of our planet's natural <em>environment</em>.</p>
     <p>HTML is <mark>FUN</mark> to learn!</p>
     <p>H<sub>2</sub>O is the scientific term for water. </p>
     <p>My favorite color is <del>blue</del> red</p>
+    <!--Quotations-->
+    <p>I am so <q>cool</q>.</p>
+    <blockquote cite="http://www.worldwildlife.org/who/index.html">
+        For 50 years, WWF has been protecting the future of nature. The world's leading conservation organization, WWF
+        works in 100 countries and is supported by 1.2 million members in the United States and close to 5 million
+        globally.
+    </blockquote>
+    <bdo dir="rtl">What a beautiful day!</bdo>
+    <!--This is a comment-->
+    <!--Links-->
+    <a href="hello-world.html">Visit our HTML tutorial</a>
+    <a href="html_images.asp" style="text-decoration:none;" target="_blank" title="Home">HTML images<br><img
+            src="images/html.svg" alt="home" width=25%></a>
 </body>
 
 </html>
