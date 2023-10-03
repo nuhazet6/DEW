@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h1>Cambio de imágenes con JavaScript</h1>
+    <img id="myFPImage" onclick="cambiaPic()" src="http://myfpschool.com/wp-content/uploads/2016/06/myblack.jpeg"
+        width="200" height="180">
+    <p>Haz click sobre la imagen para cambiarla.</p>
+    <script>
+        function cambiaPic() {
+            var image = document.getElementById('myFPImage');
+            if (image.src.match("green")) {
+                image.src =
+                    "http://myfpschool.com/wp-content/uploads/2016/06/myblack.jpeg";
+            } else if (image.src.match("blue")) {
+                image.src =
+                    "http://myfpschool.com/wp-content/uploads/2016/06/mygreen.jpeg";
+            } else {
+                image.src = "images/myblue.jpg";
+            }
+        }
+    </script>
+</body>
+
+</html>

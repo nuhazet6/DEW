@@ -3,6 +3,11 @@ body {
     text-align: center;
 }
 
+table {
+    width: 600px;
+
+}
+
 p,
 h1 {
     color: red;

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <script>
+        function Point(x) {
+            document.getElementById(x).style.color = "green";
+        }
+        function DontPoint(x) {
+            document.getElementById(x).style.color = "red";
+        }
+    </script>
+    <p id="mytxt">Aprende JavaScript con MyFPSchool!</p>
+    <button type="button" onclick="myFunction()">¡Dale!</button>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("mytxt");
+            x.style.fontSize = "25px";
+            x.style.color = "red";
+        }
+    </script>
+    <p id="pregunta1">Un documento de hipertexto solo se compone de texto</p><button type="button"
+        onclick="DontPoint('pregunta1')">True</button><button type="button" onclick="Point('pregunta1')">False</button>
+
+</body>
+
+</html>
