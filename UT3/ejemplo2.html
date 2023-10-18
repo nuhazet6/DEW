@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Configuración de Usuario</title>
+    <style>
+        body {
+            font-size: 16px;
+            background-color: white;
+        }
+        #config-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Configuración de Usuario</h1>
+    <form id="config-container">
+        <label for="colorFondo">Color de Fondo:</label>
+        <select id="colorFondo">
+            <option value="white">Blanco</option>
+            <option value="lightblue">Azul Claro</option>
+            <option value="lightgreen">Verde Claro</option>
+        </select>
+        <br><br>
+        <label for="tamanoFuente">Tamaño de Fuente:</label>
+        <select id="tamanoFuente">
+            <option value="16px">Normal</option>
+            <option value="20px">Grande</option>
+            <option value="24px">Muy Grande</option>
+        </select>
+    </div>
+
+    <script>
+        // Función para aplicar la configuración del usuario
+        function aplicarConfiguracion() {
+            var colorFondo = document.getElementById("colorFondo").value;
+            var tamanoFuente = document.getElementById("tamanoFuente").value;
+
+            // Aplicar la configuración al cuerpo de la página
+            document.body.style.backgroundColor = colorFondo;
+            document.body.style.fontSize = tamanoFuente;
+
+            // Guardar la configuración en localStorage
+            localStorage.setItem("colorFondo", colorFondo);
+            localStorage.setItem("tamanoFuente", tamanoFuente);
+        }
+
+        // Función para cargar la configuración almacenada
+        function cargarConfiguracion() {
+            var colorFondo = localStorage.getItem("colorFondo");
+            var tamanoFuente = localStorage.getItem("tamanoFuente");
+
+            if (colorFondo) {
+                document.getElementById("colorFondo").value = colorFondo;
+                document.body.style.backgroundColor = colorFondo;
+            }
+
+            if (tamanoFuente) {
+                document.getElementById("tamanoFuente").value = tamanoFuente;
+                document.body.style.fontSize = tamanoFuente;
+            }
+        }
+
+        // Cargar la configuración al cargar la página
+        cargarConfiguracion();
+
+        // Aplicar la configuración cuando cambian las selecciones
+        document.getElementById("colorFondo").addEventListener("change", aplicarConfiguracion);
+        document.getElementById("tamanoFuente").addEventListener("change", aplicarConfiguracion);
+    </script>
+</body>
+</html>

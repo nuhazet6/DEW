@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Calculadora de Propina</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        input[type="number"] {
+            width: 80px;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Calculadora de Propina</h1>
+        <p>Ingrese el monto de la factura: <input type="number" id="montoFactura"> €</p>
+        <p>Seleccione el porcentaje de propina:
+            <select id="porcentajePropina" onchange="calcularPropina()">
+                <option value="10">10%</option>
+                <option value="15">15%</option>
+                <option value="20">20%</option>
+            </select>
+        </p>
+        <button onclick="calcularPropina()">Calcular Propina</button>
+        <p>La propina es: <span id="resultadoPropina"></span> €</p>
+    </div>
+
+    <script>
+        // Función para calcular la propina
+        function calcularPropina() {
+            let montoFactura = parseFloat(document.getElementById("montoFactura").value);
+            let porcentajePropina = parseFloat(document.getElementById("porcentajePropina").value);
+            let propina = (montoFactura * porcentajePropina) / 100;
+            document.getElementById("resultadoPropina").textContent = propina.toFixed(2);
+        }
+    </script>
+</body>
+
+</html>

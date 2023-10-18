@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Circunferencia</title>
+</head>
+<body>
+    
+    <h1>Calculadora de Circunferencia</h1>
+    <label for="radio">Introduce el radio de la circunferencia (en metros):</label>
+    <input type="number" id="radio"/>
+    <br /><br />
+    <button onclick="calcular()">Calcular</button>
+    <br /><br />
+    
+    <p>Área: <span id="resultadoArea"></span></p>
+    <p>Perímetro: <span id="resultadoPerimetro"></span></p>
+        
+    <script>
+        function calcular() {
+            // Obtener el valor del radio introducido por el usuario
+            let r = parseFloat(document.getElementById("radio").value);
+            // Calcular el área y el perímetro de la circunferencia
+            let S = Math.PI * r **2;
+            let P = 2 * Math.PI * r;
+            // Mostrar los resultados en la página web
+            document.getElementById("resultadoArea").innerHTML = S.toFixed(2) + " metros cuadrados";
+            document.getElementById("resultadoPerimetro").innerHTML = P.toFixed(2) + " metros";
+        }
+    </script>
+</body>
+</html>

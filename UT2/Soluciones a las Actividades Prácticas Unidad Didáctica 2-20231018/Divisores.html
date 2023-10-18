@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Divisores</title>
+    <style>
+    body {
+    font-family: Arial, sans-serif;
+    color: white;
+    text-align: center;
+    }
+
+    .container {
+        margin: 20px auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        width: 300px;
+        background-color: forestgreen;
+    }
+
+    button {
+        margin-top: 10px;
+    }
+
+    #resultadoDivisores {
+        margin-top: 10px;
+    }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora de Divisores</h1>
+        <p>Ingrese un número para calcular sus divisores:</p>
+        <input type="number" id="numeroInput">
+        <button onclick="calcularDivisores()">Calcular Divisores</button>
+        <div ><p id="resultadoDivisores"></p></div>
+    </div>
+    
+    <script>
+    function calcularDivisores() {
+        let numero = parseInt(document.getElementById('numeroInput').value); //Convertimos en entero.
+        let divisores = '';
+        
+        for(i = 1; i <= numero; i++){ //Bucle para comprobar todos los números menores o iguales que al de entrada.
+            if(numero%i === 0){ //Verificamos que son divisores mediante el resto o módulo de la disión.
+                divisores += i + ", "; //Generamos un string con los divisores y una coma para separarlos en pantalla.
+            }
+        }
+        document.getElementById('resultadoDivisores').innerHTML = "Los divisores son: " + divisores.slice(0,-2); //Imprimimos el resultado y eliminamos el último elemento ", " del String con .slice(0,-2) para que no se imprima en pantalla.
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html>
+
+ <head>
+   <title>Unidad de trabajo 1. Actividad 4</title>
+   <meta charset="utf-8" />
+
+    <script>
+        function verdadero(x){
+            document.getElementById(x).style.color = "green";
+            }
+
+        function falso(x) {
+            document.getElementById(x).style.color = "red";
+            }
+    </script>
+     
+    <style>
+        
+      p{
+          font-family: Arial;
+          font-size: 25 px;
+        }
+
+    </style>
+
+ </head>
+
+ <body>
+
+ <section style="width:100%; text-align:left">
+
+   <p>
+     <p id="p1">¿Dos isótopos tienen distinto número másico?</p>
+     
+     <button type="button" onclick="verdadero('p1')">Verdadero</button>
+     <button type="button" onclick="falso('p1')">Falso</button>
+   </p>
+     <br/>
+
+   <p>
+     <p id="p2">¿Si un átomo tiene más electrones que protones es un catión?</p>
+     <button type="button" onclick="falso('p2')">Verdadero</button>
+     <button type="button" onclick="verdadero('p2')">Falso</button>
+   </p>
+     <br />
+
+   <p>
+     <p id="p3">¿Un anión tiene más electrones que un catión?</p>
+     <button type="button" onclick="verdadero('p3')">Verdadero</button>
+     <button type="button" onclick="falso('p3')">Falso</button>
+   </p>
+     <br />
+ </section>
+
+ </body>
+
+</html>

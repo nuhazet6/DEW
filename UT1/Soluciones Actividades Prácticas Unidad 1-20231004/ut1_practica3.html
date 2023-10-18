@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Unidad de trabajo 1. Actividad 3</title>
+</head>
+
+<body>
+
+    <section style="width:100%; text-align:center;">
+    <img id="imagen" onclick = "cambiaIMG()" src="a.jpg"></img>
+    </section>
+
+    <script>
+    function cambiaIMG(){
+        var imagen = document.getElementById('imagen');
+
+        if(imagen.src.match("a.jpg")){
+            imagen.src = "b.jpg";
+        }
+        else if(imagen.src.match("b.jpg")){
+            imagen.src = "c.jpg"
+         }
+        else{
+            imagen.src = "a.jpg"
+         }
+    }
+    </script>
+</body>
+</html>
