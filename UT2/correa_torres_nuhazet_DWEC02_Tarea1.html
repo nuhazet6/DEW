@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea1</title>
+</head>
+<body>
+    <!--Ejercicio 1-->
+    <script>
+    mult = function(){
+       for (i=1;i<=10;i++){
+        let parraf = document.createElement("p");
+        parraf.textContent = `7*${i}=${i*7}`;
+        document.body.appendChild(parraf);
+       }
+
+    }
+</script>
+<script>
+    for (i=1;i<=10;i++){
+        let parraf = document.createElement("p");
+        document.body.appendChild(parraf);
+        parraf.innerHTML = `7*${i}=${i*7}`;
+       }
+    
+</script>
+<button onclick="mult()">hola</button>
+</body>
+</html>
