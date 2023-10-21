@@ -7,24 +7,33 @@
 </head>
 <body>
     <!--Ejercicio 1-->
-    <script>
-    mult = function(){
-       for (i=1;i<=10;i++){
-        let parraf = document.createElement("p");
-        parraf.textContent = `7*${i}=${i*7}`;
-        document.body.appendChild(parraf);
-       }
-
-    }
-</script>
 <script>
-    for (i=1;i<=10;i++){
-        let parraf = document.createElement("p");
-        document.body.appendChild(parraf);
-        parraf.innerHTML = `7*${i}=${i*7}`;
+    let parraf = document.createElement("p");
+    document.body.appendChild(parraf);
+    for (i=1;i<=10;i++){        
+        parraf.innerHTML += `7 * ${i}=${7*i}<br>`;
        }
-    
+    i=1   
+    while(i<=10){
+        parraf.innerHTML += `8 + ${i}=${8+i}<br>`;
+        i++;
+    }
+    i=1
+    do{
+        parraf.innerHTML += `9 / ${i}=${9/i}<br>`;
+        i++;
+    }while(i<=10);
 </script>
-<button onclick="mult()">hola</button>
+    <!--Ejercicio 2-->
+<script>
+    let result = document.createElement("p");
+    document.body.appendChild(result)
+    result.innerHTML += `125 / 8 = ${125>>3}<br>`
+    result.innerHTML += `40 x 4= ${40<<2}<br>`
+    result.innerHTML += `25 / 2 = ${25>>1}<br>`
+    result.innerHTML += `10 x 16 = ${10<<4}<br>`
+</script>
+    <!--Ejercicio 3-->
+    
 </body>
 </html>
