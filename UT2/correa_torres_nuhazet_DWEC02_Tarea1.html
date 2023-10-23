@@ -34,6 +34,87 @@
     result.innerHTML += `10 x 16 = ${10<<4}<br>`
 </script>
     <!--Ejercicio 3-->
+    <h1>Calculadora Simple con if</h1>
+    <br/>
+    <form>
+        <label for="numero1">Número 1:
+            <input type="number" style="text-align:center" id="numero1" name="numero1" required>
+        </label>
+            <br/><br/>
+        <label for="numero2">Número 2:
+            <input type="number" style="text-align:center" id="numero2" name="numero2" required>
+        </label>
+            <br/><br/>
+        <div>
+            <button type="button" onclick="calc('+')">+</button>
+            <button type="button" onclick="calc('-')">-</button>
+            <button type="button" onclick="calc('*')">&times;</button>
+            <button type="button" onclick="calc('/')">÷</button>
+        </div>
+    </form>
+
+    <p>Resultado: <input type="text" style="text-align:center" id="resultado" readonly></p>
+<script>
+    function calc(oper){
+        let numero1 = parseFloat(document.getElementById("numero1").value);
+        let numero2 = parseFloat(document.getElementById("numero2").value);
+        let resultado
+        if (oper=="+"){
+            resultado = numero1 + numero2;
+        }else if(oper == "-"){
+            resultado = numero1 - numero2;
+        }else if(oper == "*"){
+            resultado = numero1 * numero2;
+        }else{
+            resultado = numero1 / numero2;
+        }
+        document.getElementById("resultado").value = resultado;
+    }
+</script>
+<h1>Calculadora Simple con switch</h1>
+    <br/>
+    <form>
+        <label for="numero3">Número 1:
+            <input type="number" style="text-align:center" id="numero3" name="numero3" required>
+        </label>
+            <br/><br/>
+        <label for="numero4">Número 2:
+            <input type="number" style="text-align:center" id="numero4" name="numero4" required>
+        </label>
+            <br/><br/>
+        <div>
+            <button type="button" onclick="calc1('+')">+</button>
+            <button type="button" onclick="calc1('-')">-</button>
+            <button type="button" onclick="calc1('*')">&times;</button>
+            <button type="button" onclick="calc1('/')">÷</button>
+        </div>
+    </form>
+
+    <p>Resultado: <input type="text" style="text-align:center" id="resultado1" readonly></p>
+<script>
+    function calc1(oper){
+        let numero3 = parseFloat(document.getElementById("numero3").value);
+        let numero4 = parseFloat(document.getElementById("numero4").value);
+        let resultado
+        
+        switch (oper) {
+        case "+":
+            resultado = numero3 + numero4;
+            break;
+        case "-":
+            resultado = numero3 - numero4;
+            break;
+        case "*":
+            resultado = numero3 * numero4;
+            break;
+        default:
+            resultado = numero3 / numero4;
+            break;
+    }
+        document.getElementById("resultado1").value = resultado;
+    }
     
+    
+</script>
 </body>
 </html>
