@@ -1,0 +1,40 @@
+<!DOCTYPE  html>
+<html>
+<head>
+<meta charset= "utf-8">
+<title>UT3 Actividad Práctica 1 Formulario</title>
+    <script>
+        function  copiarAlPadre(){
+            opener.document.getElementById('nombre').innerHTML= document.getElementById('nombre').value;
+            opener.document.getElementById('direccion').innerHTML= document.getElementById('direccion').value;
+            opener.document.getElementById('telefono').innerHTML= document.getElementById('telefono').value;
+            opener.document.getElementById('correo').innerHTML= document.getElementById('correo').value;
+            self.close();
+        }
+    </script>
+</head>
+<body>
+<h1>Formulario de registro</h1>
+<form  id="formulario">
+    <p>
+    <label  for="nombre">Nombre y apellidos:</label>
+    <input  type="text"  id="nombre"/>
+    </p>
+    <p>
+    <label  for="direccion">Dirección completa (calle, código postal, localidad y municipio):</label>
+    <input  type="text"  id="direccion"/>
+    </p>
+    <p>
+    <label  for="telefono">Teléfono:</label>
+    <input  type="text"  id="telefono"/>
+    </p>
+     <p>
+    <label  for="correo">Correo electrónico:</label>
+    <input  type="text"  id="correo"/>
+    </p>
+    <p>
+    <input  type="button"  value="Completar registro"  id="enviar" onclick="copiarAlPadre()" />
+    </p>
+</form>
+</body>
+</html>

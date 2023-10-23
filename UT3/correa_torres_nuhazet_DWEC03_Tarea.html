@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onLoad="nuevaVentana()">
+    <script>
+        function nuevaVentana(){
+            let subVentana = window.open("nueva.html",height=800,width=600,resizable=false);
+            alert(subVentana.location);
+            alert(subVentana.location.protocol);
+            alert(subVentana.navigator.appCodeName);
+            if(subVentana.navigator.javaEnabled()){
+                alert("Java SI disponible en esta ventana");
+            }else{
+                alert("Java NO disponible en esta ventana");
+            }
+        }
+    </script>
+</body>
+</html>

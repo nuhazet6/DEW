@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ventana Secundaria</title>
+</head>
+<body>
+    <form id="miFormulario">
+        <input type="text" id="datoAEnviar" placeholder="Escribe algo...">
+        <button type="button" onclick="enviarDatos()">Enviar a la Ventana Principal</button>
+    </form>
+
+    <script>
+        // Función para enviar datos a la ventana principal
+        function enviarDatos() {
+            let datoAEnviar = document.getElementById('datoAEnviar').value;
+            window.opener.postMessage(datoAEnviar, '*');     // Enviar el dato a la ventana principal
+            self.close(); //cerramos la ventana del formulario.
+        }
+    </script>
+</body>
+</html>

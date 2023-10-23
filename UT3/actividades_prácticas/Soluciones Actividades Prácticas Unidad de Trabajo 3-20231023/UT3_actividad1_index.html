@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="utf-8">
+	<title>UT3 Actividad Práctica 1</title>
+    <script>
+    function  abrirVentana(){
+        let confirmacion = self.confirm('A continuación se abrirá una nueva ventana para completar el registro');
+        switch(confirmacion){
+            case true:
+                nuevaVentana =  window.open("UT3_actividad1_formulario.html",  "Formulario de registro", "height=500,width=500");
+                break;
+            case false:
+                self.alert('No se puede completar el registro');
+        }   
+    }
+    </script>
+</head>
+<body>
+    <h1>Regístrese aquí</h1>
+    <form  action="">
+    <p>
+        <input  type="button" id="abrir" onclick="abrirVentana()" value = "Formulario de registro">
+    </p>
+        <h2>Resultado del registro:</h2>
+        <p>Nombre completo: <span id = "nombre"></span></p>
+        <p>Dirección completa: <span id = "direccion"></span></p>
+        <p>Teléfono: <span id = "telefono"></span></p>
+        <p>Correo electrónico: <span id = "correo"></span></p>
+    </form>
+</body>
+
+</html>
