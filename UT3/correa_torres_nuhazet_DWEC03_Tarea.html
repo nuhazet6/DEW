@@ -9,7 +9,12 @@
     <script>
         function nuevaVentana(){
             let subVentana = window.open("nueva.html",height=800,width=600,resizable=false);
-            alert(subVentana.location);
+            let titulo = subVentana.document.createElement("h3");
+            subVentana.body.appendChild(titulo);
+            titulo.innerHTML += "Ejemplo de Ventana Nueva"
+            let parrafo = subVentana.document.createElement("p");
+            subVentana.body.appendChild(parrafo);
+            parrafo.innerHTML += `${subVentana.location}<br>`;
             alert(subVentana.location.protocol);
             alert(subVentana.navigator.appCodeName);
             if(subVentana.navigator.javaEnabled()){
