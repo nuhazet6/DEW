@@ -6,23 +6,38 @@
     <title>Document</title>
 </head>
 <body onLoad="nuevaVentana()">
+    <button onclick="nuevaVentana()">Nueva Ventana</button>
+    <button onclick="ventanaPrincipal()">Ventana Principal</button>
+    <div id="Content"></div>
     <script>
         function nuevaVentana(){
-            let subVentana = window.open("nueva.html",height=800,width=600,resizable=false);
-            let titulo = subVentana.document.createElement("h3");
-            subVentana.body.appendChild(titulo);
-            titulo.innerHTML += "Ejemplo de Ventana Nueva"
-            let parrafo = subVentana.document.createElement("p");
-            subVentana.body.appendChild(parrafo);
-            parrafo.innerHTML += `${subVentana.location}<br>`;
-            alert(subVentana.location.protocol);
-            alert(subVentana.navigator.appCodeName);
+            let subVentana = window.open("height:800","width:600",resizable=false);
+            text= `
+                <h3>Ejemplo de Ventana Nueva</h3>
+                ${window.location.href}<br>
+                ${window.location.protocol}<br>
+                ${subVentana.navigator.appCodeName}<br>
+            `   
             if(subVentana.navigator.javaEnabled()){
-                alert("Java SI disponible en esta ventana");
+                tex += "Java SI disponible en esta ventana";
             }else{
-                alert("Java NO disponible en esta ventana");
+                text += "Java NO disponible en esta ventana";
             }
+            subVentana.document.write(text); 
+        }
+        function ventanaPrincipal(){
+            fullname = prompt("Introduzca su nombre y apellido:");
+            birthday = prompt("Introduzca su fecha de nacimiento en formato 00/00/0000 dia/mes/año:");
+            result = `
+                <p>Buenos días ${fullname}.<br>Tu nombre tiene ${fullname.length()}, incluidos espacios.<br>
+                La primera letra A de tu nombre está en la posición: ${fullname.indexOf('a')}<br>
+                La última letra A de tu nombre está en la posición: ${fullname.lastIndexOf('a')}<br>
+                Tu nombre menos las 3 primeras letras es: ${fullname.substring(3,)}<br>
+                Tu nombre todo en mayúsculas es: ${fullname.toUpperCas()}<br>
+                Tu edad es:  <br></p>`
+            document.getElementById("Content").innerHTML += result
         }
     </script>
+    
 </body>
 </html>
