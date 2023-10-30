@@ -10,30 +10,35 @@
     <button onclick="ventanaPrincipal()">Ventana Principal</button>
     <script>
         function nuevaVentana(){
-            let subVentana = window.open("","nueva ventana","width=1000,height=800,resizable=false");            
+            let subVentana = window.open("","nueva ventana","width=1000,height=800,resizable=false");                        
             text= `
                 <h3>Ejemplo de Ventana Nueva</h3>
                 ${window.location.href}<br>
                 ${window.location.protocol}<br>
-                ${subVentana.navigator.appCodeName}<br>
-                
+                ${subVentana.navigator.appCodeName}<br>                
             `   
             if(subVentana.navigator.javaEnabled()){
                 tex += "Java SI disponible en esta ventana";
             }else{
                 text += "Java NO disponible en esta ventana";
             }
-            text += ' <br> <iframe src="https://www.google.es" height="600" width="800"></iframe> '
+            text += ' <br> <iframe src="https://www.bing.es" height="600" width="800"></iframe> '
             subVentana.document.write(text); 
         }        
     </script>
     <script>
         function ventanaPrincipal(){
             let fullname = prompt("Introduzca su nombre y apellido:");
-            let birthday = new Date(prompt("Introduzca su fecha de nacimiento en formato año-mes-día , por ejemplo: 2000-01-01:"));
+            let day_birth = prompt("Introduzca el día de su nacimiento:");
+            let month_birth = prompt("Introduzca el mes de su nacimiento:");
+            let year_birth = prompt("Introduzca el año de su nacimiento:");
+            let birthday = new Date(`${year_birth}-${month_birth}-${day_birth}`);
             let now = new Date();
             let years_old = now.getFullYear() - birthday.getFullYear();            
             if (now.getMonth() < birthday.getMonth()){
+                years_old--;
+            }
+            else if(now.getMonth() == birthday.getMonth() && now.getDate() <= birthday.getDate){
                 years_old--;
             }
             let weekDays = ['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado']
@@ -47,8 +52,7 @@
                 Naciste un feliz ${weekDays[birthday.getDay()]} del año ${birthday.getFullYear()} <br>
                 El coseno de 180 es ${Math.cos(180)} <br>
                 El número mayor de (34,67,23,75,35,19) es: ${Math.max(34,67,23,75,35,19)} <br>
-                Ejemplo de número azar: ${Math.floor(Math.random() * 11)} `
-            alert("adios");
+                Ejemplo de número azar: ${Math.floor(Math.random() * 11)} `            
             document.write(result);
         }
     </script>
