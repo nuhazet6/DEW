@@ -3,18 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ventana Principal</title>
 </head>
 <body>
     <button onclick="nuevaVentana()">Nueva Ventana</button>
     <button onclick="ventanaPrincipal()">Ventana Principal</button>
-    <button onclick="aleatorio()">Numero aleatorio del 0 al 10</button>
-    <p id="content">
-
-    </p>
     <script>
         function nuevaVentana(){
-            let subVentana = window.open("","nueva","width=1000,height=800,resizable=false");            
+            let subVentana = window.open("","nueva ventana","width=1000,height=800,resizable=false");            
             text= `
                 <h3>Ejemplo de Ventana Nueva</h3>
                 ${window.location.href}<br>
@@ -29,8 +25,7 @@
             }
             text += ' <br> <iframe src="https://www.google.es" height="600" width="800"></iframe> '
             subVentana.document.write(text); 
-        }
-        
+        }        
     </script>
     <script>
         function ventanaPrincipal(){
@@ -57,11 +52,5 @@
             document.write(result);
         }
     </script>
-    <script>
-        function aleatorio(){
-            document.getElementById('content').innerHTML = (Math.floor(Math.random() * 11));
-        }
-    </script>
-    
 </body>
 </html>
