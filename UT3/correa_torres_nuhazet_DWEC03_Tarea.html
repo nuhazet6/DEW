@@ -5,37 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body onLoad="nuevaVentana()">
+<body>
     <button onclick="nuevaVentana()">Nueva Ventana</button>
     <button onclick="ventanaPrincipal()">Ventana Principal</button>
-    <div id="Content"></div>
+    <button onclick="aleatorio()">Numero aleatorio del 0 al 10</button>
+    <p id="content">
+
+    </p>
     <script>
         function nuevaVentana(){
-            let subVentana = window.open("height:800","width:600",resizable=false);
+            let subVentana = window.open("","nueva","width=1000,height=800,resizable=false");            
             text= `
                 <h3>Ejemplo de Ventana Nueva</h3>
                 ${window.location.href}<br>
                 ${window.location.protocol}<br>
                 ${subVentana.navigator.appCodeName}<br>
+                
             `   
             if(subVentana.navigator.javaEnabled()){
                 tex += "Java SI disponible en esta ventana";
             }else{
                 text += "Java NO disponible en esta ventana";
             }
+            text += ' <br> <iframe src="https://www.google.es" height="600" width="800"></iframe> '
             subVentana.document.write(text); 
         }
+        
+    </script>
+    <script>
         function ventanaPrincipal(){
-            fullname = prompt("Introduzca su nombre y apellido:");
-            birthday = prompt("Introduzca su fecha de nacimiento en formato 00/00/0000 dia/mes/año:");
-            result = `
-                <p>Buenos días ${fullname}.<br>Tu nombre tiene ${fullname.length()}, incluidos espacios.<br>
-                La primera letra A de tu nombre está en la posición: ${fullname.indexOf('a')}<br>
-                La última letra A de tu nombre está en la posición: ${fullname.lastIndexOf('a')}<br>
-                Tu nombre menos las 3 primeras letras es: ${fullname.substring(3,)}<br>
-                Tu nombre todo en mayúsculas es: ${fullname.toUpperCas()}<br>
-                Tu edad es:  <br></p>`
-            document.getElementById("Content").innerHTML += result
+            let fullname = prompt("Introduzca su nombre y apellido:");
+            let birthday = new Date(prompt("Introduzca su fecha de nacimiento en formato año-mes-día , por ejemplo: 2000-01-01:"));
+            let now = new Date();
+            let years_old = now.getFullYear() - birthday.getFullYear();            
+            if (now.getMonth() < birthday.getMonth()){
+                years_old--;
+            }
+            let weekDays = ['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado']
+            result = `Buenos días ${fullname}. <br>
+                Tu nombre tiene ${fullname.length} caracteres, incluidos espacios. <br>
+                La primera letra A de tu nombre está en la posición: ${fullname.indexOf('a')+1} <br>
+                La última letra A de tu nombre está en la posición: ${fullname.lastIndexOf('a')+1} <br>
+                Tu nombre menos las 3 primeras letras es: ${fullname.substring(3,fullname.length)} <br>
+                Tu nombre todo en mayúsculas es: ${fullname.toUpperCase()} <br>
+                Tu edad es: ${years_old} <br> 
+                Naciste un feliz ${weekDays[birthday.getDay()]} del año ${birthday.getFullYear()} <br>
+                El coseno de 180 es ${Math.cos(180)} <br>
+                El número mayor de (34,67,23,75,35,19) es: ${Math.max(34,67,23,75,35,19)} <br>
+                Ejemplo de número azar: ${Math.floor(Math.random() * 11)} `
+            alert("adios");
+            document.write(result);
+        }
+    </script>
+    <script>
+        function aleatorio(){
+            document.getElementById('content').innerHTML = (Math.floor(Math.random() * 11));
         }
     </script>
     
