@@ -19,25 +19,41 @@ function actividad_4(arr_length=15,min_value=-10,max_value=20){
     arr_rnd.forEach(x => {
         switch (true) {
             case x <= -5:
-                let description = "Eliminar al principio"                
+                description = "Eliminar al principio"                
                 number = arr_rnd[0]
+                operation = 'shift()'
                 break;
-            case -5 < x <= 0:
-                let description = "Eliminar al último"                
+            case -5 < x && x <= 0:
+                description = "Eliminar al último"                
                 number = arr_rnd[arr_rnd.length-1]
+                operation = 'pop()'
                 break;
-            case 0 < x <= 10:
-                let description = "Añadir al principio"                
-            
-            break;
-            case 10 < x <= 20:
-                let description = "Añadir al final"                
-            
-            break;
+            case 0 < x && x <= 10:
+                description = "Añadir al principio"                
+                number = x
+                operation = 'unshift(x)' 
+                break;
+            case 10 < x && x <= 20:
+                description = "Añadir al final"  
+                number = x      
+                operation = 'push(x)'            
+                break;
         }
-        new_array = [].concat(arr_rnd)
-        eval(`new_array.`)
-        
+        new_array = [].concat(arr_rnd);
+        eval(`new_array.${operation}`);
+        alert(`${x} ${description} número=${number} tamaño=${new_array.length} array=${new_array}`);
     });
-
+}
+//Actividad 5
+function* random_numbers(elements_amount=10,min_value=100,max_value=200){
+    for (let index = 0; index < elements_amount; index++) {
+        yield parseInt(Math.random() * (max_value - min_value+1) + min_value )
+    }        
+}
+function sqrt_array(arr_length=20,min_value=60,max_value=100){
+    sqr_arr = []    
+    for(let num of random_numbers(arr_length,min_value,max_value)){        
+        sqr_arr.push(Math.sqrt(num));        
+    }
+    return sqr_arr
 }
