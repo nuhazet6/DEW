@@ -7,9 +7,7 @@ function numbers_keys_range(lower=1,upper=0,step=1){
     }
     return result
 }
-function mensajeConstuirEdificio(edificio,element){
-    element.innerHTML += `<li> Construido nuevo edificio en calle: ${edificio.calle}, nº${edificio.numero}, CP: ${edificio.cod_post} </li>`
-}
+
 function Edificio(calle, numero, cod_post,name) {
     //Al crear el elemento en el constructor queda ligado al objeto en cuestión 
     let list = document.createElement("ul");
@@ -43,11 +41,10 @@ function Edificio(calle, numero, cod_post,name) {
             index = num_planta - 1          
             for([key,value] of this.plantas[index]){
                 list.innerHTML += `<li> Propietario del piso ${key} de la planta ${num_planta}: ${value} </li>`
-            }          
-            
+            }                 
         }
     }
-    mensajeConstuirEdificio(this,list);
+    list.innerHTML += `<li> Construido nuevo edificio en calle: ${this.calle}, nº${this.numero}, CP: ${this.cod_post} </li>`
 
 }
 
