@@ -8,7 +8,7 @@ function numbers_keys_range(lower=1,upper=0,step=1){
     return result
 }
 
-function Edificio(calle, numero, cod_post,name) {
+function Edificio(calle, numero, cod_post, name) {
     //Al crear el elemento en el constructor queda ligado al objeto en cuestión 
     let list = document.createElement("ul");
     document.body.appendChild(list);       

@@ -8,10 +8,9 @@ function random_array(arr_length=10,min_value=100,max_value=200){
     return arr_rnd
 }
 //Actividad 2 y 3
-function random_array_sorted(arr_length=20,min_value=20,max_value=100,disorder=false){
+function array_sorted(array,disorder=false){
     disorder ? disor_func = (a,b) => Math.floor(Math.random()*(arr_length+1)) : disor_func=(a,b) => a-b;
-    arr_rnd = random_array(arr_length,min_value,max_value);
-    return arr_rnd.sort(disor_func);
+    return array.sort(disor_func);
 }
 //Actividad 4
 function actividad_4(arr_length=15,min_value=-10,max_value=20){
