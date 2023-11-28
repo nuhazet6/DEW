@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UT5_Act9</title>
+    <style>
+        #galeria, #galeria * {box-sizing:border-box}
+        #galeria {
+        border: 1px solid #EAEAEA;  /* Borde de la galería */
+        padding: 10px;
+        padding-bottom: 0;
+        background: white;  /* Fondo de la galería */
+        width: 410px;  /* Ancho de la galería */
+        }
+        #galeria_miniaturas {
+        display: table;
+        margin: 0 auto;
+        }
+        #imgGaleria {
+        border: 1px solid #F2F2F2;  /* Borde de la imagen */
+        padding: 3px;
+        width: 500px; /* Ancho de la imagen */
+        height: 500px; /* Alto de la imagen */
+        }
+        .miniatura {
+        width:  60px;  /* Ancho de las miniaturas */
+        height:  60px;  /* Alto de las miniaturas */
+        float: left;
+        cursor: pointer;
+        padding: 5px;
+        margin: 10px 5px;
+        }
+        .miniatura:hover {
+        opacity:.8;   /* Opacidad */
+        }
+        .miniatura:active {
+        opacity:1;
+        }
+    </style>
+<script>
+    //Otra forma de asegurar la carga de los elementos del DOM:
+    document.addEventListener('DOMContentLoaded', function () {
+    let imgPrincipal = document.getElementById('imgGaleria');
+    let miniaturas = document.images;//En este caso podemos aprovechar que únicamente tenemos las imágenes de la galería. Veremos en el siguiente tema otros modos de recoger las imágenes del Div concreto.
+        
+    //Manejamos el evento de click sobre las imágenes:
+    for (let i = 1; i < miniaturas.length; i++) {
+      miniaturas[i].addEventListener('click', function () {
+        imgPrincipal.src = miniaturas[i].src;
+      });
+    }
+    
+    //Manejamos ahora los eventos del teclado para las flechas D e I. Para ello, implementamos funciones para mostrar siguiente y anterior:
+    function mostrarSiguiente() {
+      for (let i = 1; i < miniaturas.length; i++) {
+        if (imgPrincipal.src === miniaturas[i].src && i < miniaturas.length - 1) {
+          imgPrincipal.src = miniaturas[i + 1].src;
+          break;
+        }
+      }
+    }
+
+    function mostrarPrevia() {
+      for (let i = 1; i < miniaturas.length; i++) {
+        if (imgPrincipal.src === miniaturas[i].src && i > 1) {
+          imgPrincipal.src = miniaturas[i - 1].src;
+          break;
+        }
+      }
+    }
+            
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'ArrowRight') {
+        mostrarSiguiente();
+      } else if (event.key === 'ArrowLeft') {
+        mostrarPrevia();
+      }
+    });
+  });
+</script>
+</head>
+<body>
+<div id="galeria" style="text-align: center">
+    <div id="galeria_imagen">
+        <img id="imgGaleria" src="imagen1.jpg" />
+    </div>
+    <div id="galeria_miniaturas">
+        <img class="miniatura" src="imagen1.jpg"/>
+        <img class="miniatura" src="imagen2.jpg"/>
+        <img class="miniatura" src="imagen3.jpg"/>
+        <img class="miniatura" src="imagen4.jpg"/>
+        <img class="miniatura" src="imagen5.jpg"/>
+    </div>
+</div>
+
+</body>
+</html>

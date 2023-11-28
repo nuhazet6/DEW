@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UT5_Actividad 8</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+    button {
+      font-size: 16px;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+  </style>
+<script>
+    window.onload = function(){
+        let miBoton = document.getElementById('miBoton');
+        miBoton.addEventListener('click',function boton(){
+            alert('¡Este botón se desactivará a continuación!');
+            miBoton.removeEventListener('click',boton);
+        });
+    }
+</script>
+</head>
+<body>
+
+<button id="miBoton">¡Haz Clic!</button>
+
+</body>
+</html>

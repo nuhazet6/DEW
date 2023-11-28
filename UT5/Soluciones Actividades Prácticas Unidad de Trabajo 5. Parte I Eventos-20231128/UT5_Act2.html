@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detener Burbujeo</title>
+</head>
+<body>
+
+<div id="principal">
+    Contenedor Principal
+    <div id="secundario">Contenedor Secundario</div>
+</div>
+
+<button id="miboton">Botón</button>
+
+<script>
+    window.onload = function() {
+        document.getElementById("principal").addEventListener("click", function () {
+            alert("Pulsado el contenedor principal");
+        }, false);
+
+        document.getElementById("secundario").addEventListener("click", function (e) {
+            alert("Pulsado el contenedor secundario y paramos la propagación");
+            e.stopPropagation();
+        }, true);
+
+        document.getElementById("miboton").addEventListener("click", function () {
+            alert("Pulsado el botón");
+        }, false);
+    };
+</script>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UT5_Actividad 7</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+    a {
+      display: block;
+      margin: 10px;
+      font-size: 16px;
+      text-decoration: none;
+      color: #333;
+    }
+  </style>
+</head>
+<script>
+    window.onload = function(){
+        let enlace1 = document.getElementById('enlace1');
+        let enlace2 = document.getElementById('enlace2');
+        let enlace3 = document.getElementById('enlace3');
+        
+        enlace1.addEventListener('click',evento);
+        enlace2.addEventListener('click',evento);
+        enlace3.addEventListener('click',evento);
+        
+        function evento(event){
+            event.preventDefault();
+            alert(`¡Hecho click en ${this.textContent}!`);
+        }
+    }
+</script>
+<body>
+
+<a href="https://www.bing.com/" id="enlace1">Enlace 1</a>
+<a href="https://www.bing.com/" id="enlace2">Enlace 2</a>
+<a href="https://www.bing.com/" id="enlace3">Enlace 3</a>
+
+</body>
+</html>
