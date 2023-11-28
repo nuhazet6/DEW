@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>UT4 Actividad 5</title>
+    <script src='funciones.js'></script>
+</head>
+
+<body>
+    <h4>Actividad 6. Crear una función que devuelva el valor máximo y mínimo del array, e indique el índice de estos valores (si el valor se repite, informar sólo sobre la primera vez que aparezca). Probar con un array aleatorio de 20 números entre -100 y 100.</h4>
+    
+    <p>El array generado es: <span id="resultado"></span></p>
+    <p>El valor máximo es: <span id="max"></span> y su posición: <span id="maxIndex"></span></p>
+    <p>El valor mínimo es: <span id="min"></span> y su posición: <span id="minIndex"></span></p> 
+    
+    <script>
+        let arr = newArray(20,-100,100)
+        document.getElementById('resultado').innerHTML = arr.join(', ');
+        document.getElementById('max').innerHTML = maxYmin(arr)[0];
+        document.getElementById('maxIndex').innerHTML = maxYmin(arr)[1];
+        document.getElementById('min').innerHTML = maxYmin(arr)[2];
+        document.getElementById('minIndex').innerHTML = maxYmin(arr)[3];
+    </script>
+    
+</body>
+</html>

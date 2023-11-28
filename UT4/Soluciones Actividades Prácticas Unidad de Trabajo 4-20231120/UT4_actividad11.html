@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>UT4_actividad11</title>
+    
+<script type="text/javascript">
+function Coche(modelo, color, matricula, anho) {
+    this.modelo = modelo;
+    this.color = color;
+    this.matricula = matricula;
+    this.anho = anho;
+}
+
+let coches = {};
+
+function agregarCoche(matricula, modelo, color, anho) {
+    coches[matricula] = new Coche(modelo, color, matricula, anho);
+}
+
+function eliminarCoche(matricula) {
+    if (coches[matricula]) {
+        delete coches[matricula];
+    }
+}
+
+function mostrarTodosLosCoches() {
+    for (let matricula in coches) {
+        let coche = coches[matricula];
+        console.log("Modelo: " + coche.modelo);
+        console.log("Color: " + coche.color);
+        console.log("Matrícula: " + coche.matricula);
+        console.log("Año: " + coche.anho);
+        console.log("------------------------------------");
+    }
+}
+
+// Ejemplos de uso de las funciones
+agregarCoche("123ABC", "Toyota Camry", "Azul", 2022);
+agregarCoche("456XYZ", "Honda Civic", "Rojo", 2023);
+agregarCoche("126XWD", "Fiat 500", "Negro", 2019);
+
+mostrarTodosLosCoches();
+
+eliminarCoche("789DEF");
+eliminarCoche("456XYZ");
+
+mostrarTodosLosCoches();
+</script>
+</head>
+<body>
+    <h4>Actividad 11. Vamos a crear un programa en JavaScript para gestionar una base de datos de coches en un concesionario. Cada coche estará representado por su modelo, color, matrícula y año. Deberás crear una serie de funciones para agregar coches, eliminar coches y mostrar información sobre los coches en la base de datos.</h4>
+
+    <p>Instrucciones:</p>
+
+    <p>Crea una función constructora llamada Coche que acepte los siguientes parámetros: modelo, color, matricula y ano. Esta función deberá crear objetos coche con estas propiedades.</p>
+    <p>Crea una base de datos de coches utilizando un objeto JavaScript llamado coches. Este objeto será un almacén de coches, donde la clave será la matrícula del coche y el valor será un objeto coche.</p>
+    <p>Crea una función llamada agregarCoche que permita agregar un coche a la base de datos.</p>
+    <p>Crea una función llamada eliminarCoche que permita eliminar un coche de la base de datos.</p>
+    <p>Crea una función llamada mostrarTodosLosCoches que muestre en la consola la información de todos los coches en la base de datos, incluyendo modelo, color, matrícula y año.</p>
+    
+</body>
+</html>

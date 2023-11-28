@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>UT4 Actividad 5</title>
+    <script src='funciones.js'></script>
+</head>
+
+<body>
+    <h4>Actividad 5. Crear una función que acepte un array y devuelva otro array con la raíz cuadrada de cada elemento. Probar con un array aleatorio de 20 números entre 60 y 100.</h4>
+    
+    <p>El array generado es: <span id="resultado"></span></p>
+    <p>Las raíces del array son: <span id="raices"></span></p>
+    
+    <script>
+        let arr = newArray(20,60,100)
+        document.getElementById('resultado').innerHTML = arr.join(', ');
+        document.getElementById('raices').innerHTML = raiz(arr,2).join(', ');
+    </script>
+    
+</body>
+</html>

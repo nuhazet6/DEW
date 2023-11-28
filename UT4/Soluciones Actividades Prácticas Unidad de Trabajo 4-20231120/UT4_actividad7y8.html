@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>UT4 Actividad 5</title>
+    <script src='funciones.js'></script>
+    <script>
+    function contarRepetidos(arr) {
+        let countMap = {};
+
+        // Iterar sobre el array y contar la frecuencia de cada elemento
+        arr.forEach((element) => {
+        if (countMap[element]) {
+        countMap[element] += 1;
+        } else {
+        countMap[element] = 1;
+        }
+        });
+
+        // Crear un objeto con los elementos repetidos y su frecuencia
+        let repetidos = {};
+        for (key in countMap) {
+        if (countMap[key] > 1) {
+        repetidos[key] = countMap[key];
+        }
+        }
+
+        return repetidos;
+    }
+
+    let miArray = newArray(50,10,20);
+    let elementosRepetidos = contarRepetidos(miArray);
+
+    console.log("Elementos repetidos y su frecuencia:");
+    console.log(elementosRepetidos);
+
+    </script>
+</head>
+
+<body>
+    <h4>Actividad 7 y 8. Crear un array de 50 números aleatorios enteros aleatorios entre 10 y 20. Para cada elemento, informar si es la primera vez que aparece, o si se trata de un elemento repetido. Modificar el ejercicio anterior para que si el número ya existía, nos indique cuántas veces había aparecido con anterioridad.</h4>    
+</body>
+</html>

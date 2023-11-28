@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="utf-8">
+	<title>UT4 Actividad 4</title>
+    <script src="funciones.js"></script>
+    <script>
+    let arr = newArray(15,-10,20);
+        console.log('El array original es: ',arr);
+    let resultado = []
+    let x;
+        
+    for(let i=0;i<arr.length;i++){
+        x = arr[i];
+        let nuevo;
+        if(x<=-5){
+            nuevo = arr.slice(1);//Indicamos sólo el inicio para eliminar el primero.
+            console.log(x, ', eliminar el primero',nuevo);
+        }else if(x>-5 && x<=0){
+            nuevo = arr.slice(0,-1);
+            console.log(x, ', eliminar el último',nuevo);
+        }else if(x>0 && x<=10){
+            nuevo = [x].concat(arr);
+            console.log(x, ', añadir el primero',nuevo);
+        }else if(x>10){
+            nuevo = arr.concat(x);
+            console.log(x, ', añadir el último',nuevo);
+        }
+    }
+    </script>
+</head>
+
+<body>
+    <h4>Actividad 4. Modifica la función de la actividad 1 para recorrer un array aleatorio de 15 elementos entre -10 y 20, de tal modo que para cada elemento x, se cree un nuevo array de la siguiente forma:  </h4>
+    <ul>
+        <li>x &le; -5: Eliminar el primer elemento del array.</li>
+        <li>-5 &lt; x &le; 0: Eliminar el último elemento del array.</li>
+        <li>0 &lt; x &le; 10: Añadir x al principio del array.</li>
+        <li>10 &lt; x: Añadir x al final del array.</li>
+    </ul> 
+    Mostrar un mensaje de texto para cada número indicando el valor de x, la operación realizada (eliminar o añadir, al principio o al final), el número añadido/eliminado y el tamaño del array tras realizar la operación, así como el array resultante.
+</body>
+
+</html>

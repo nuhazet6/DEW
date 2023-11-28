@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>UT4 Actividad 1</title>
+    <script>
+    function newArray(n=10,min=100,max=200){
+            let arr = [];
+            while(n>0){
+                    arr.push(parseInt(Math.random()*(max-min+1)+min));
+                    n--;
+                }
+            return arr;
+        }
+    </script>
+</head>
+
+<body>
+    <h4>Actividad 1. Crear una función que genere un array aleatorio, usando 3 parámetros: número de elementos (por defecto 10, valor mínimo del elemento (por defecto 100), valor máximo (por defecto 200))</h4>
+    
+    <p>El array generado es: <span id="resultado"></span></p>
+    
+    <script>
+        document.getElementById('resultado').innerHTML = newArray().join(', ');
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>UT4 Actividad 2</title>
+    <script src="funciones.js"></script>
+</head>
+
+<body>
+ <h4>Actividad 2. Usando la función del ejercicio 1, generar un array aleatorio de 20 elementos entre 20 y 100 y luego ordenarlo.</h4>
+    
+    <p>El array generado es: <span id="resultado"></span></p>
+    <p>El array ordenado es: <span id="ordenado"></span></p>
+    
+    <script>
+        let arr = newArray(20,20,100)
+        document.getElementById('resultado').innerHTML = arr.join(', ');
+        document.getElementById('ordenado').innerHTML = ordenar(arr).join(', ');
+    </script>
+    
+</body>
+</html>

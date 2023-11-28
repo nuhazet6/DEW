@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>UT4 Actividad 5</title>
+    <script>
+    function letraDni(){
+        let x = document.getElementById('numeroDNI').value
+        let num = x>0 && x<99999999? x:window.alert('Introduzca un número válido.');
+        let letras = ['T','R','W','A','G','M','Y','F','P','D','X','B','N','J','Z','S','Q','V','H','L','C','K','E','T'];
+        document.getElementById('letraResultado').innerHTML = letras[num%23];
+    }
+    </script>
+</head>
+
+<body>
+    <h4>Actividad 9. Realizar una función en JS que dado un DNI (comprobar que es un número entre 0 y 99999999), devuelva la letra asociado al mismo. Esta letra se calcula como el módulo (resto) de la división del número del DNI entre 23, y a partir del resto se escoge una de las siguientes letras según la posición: TRWAGMYFPDXBNJZSQVHLCKET. Por ejemplo, para el DNI 12345678, al dividir entre 23 se obtiene como resto 14, por lo que le corresponde la letra 'Z', siendo el DNI correcto 12345678Z.</h4>
+    <form id="dniForm">
+        <label for="numeroDNI">Número de DNI (sin letra):</label>
+        <input type="text" id="numeroDNI" name="numeroDNI" required>
+        <button type="button" onclick="letraDni()">Calcular Letra</button>
+    </form>
+    <p>La letra asignada es: <span id="letraResultado"></span></p>
+</body>
+</html>

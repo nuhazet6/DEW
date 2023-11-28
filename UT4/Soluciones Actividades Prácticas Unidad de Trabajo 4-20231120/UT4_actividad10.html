@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <script>
+    function calcularFib(n) {
+      function fibonacci(n) {
+        if (n <= 1) {
+          return n;
+        } else {
+          return fibonacci(n - 1) + fibonacci(n - 2);
+        }
+      }
+
+      let resultado = [];
+      for (let i = 0; i < n; i++) {
+        resultado.push(fibonacci(i));
+      }
+        return resultado;
+    }
+    console.log(calcularFib(10).join(', '));
+    </script>
+</head>
+<body>
+    <h4>Actividad 10. Emplea una función recursiva para generar la sucesión de Fibonacci.</h4>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>UT4 Actividad 3</title>
+    <script src='funciones.js'></script>
+</head>
+
+<body>
+ <h4>Actividad 3. Crear una función que mezcle los elementos de un array en orden aleatorio. Probar con el array ordenado creado en el ejercicio anterior.</h4>
+    
+    <p>El array generado es: <span id="resultado"></span></p>
+    <p>El array ordenado es: <span id="ordenado"></span></p>
+    <p>El array desordenado de nuevo: <span id="desordenado"></span></p>
+    
+    <script>
+        let arr = newArray(20,20,100)
+        document.getElementById('resultado').innerHTML = arr.join(', ');
+        document.getElementById('ordenado').innerHTML = ordenar(arr).join(', ');
+        document.getElementById('desordenado').innerHTML = barajar(arr).join(', ');
+    </script>
+    
+</body>
+</html>
