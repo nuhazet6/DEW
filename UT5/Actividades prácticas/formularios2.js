@@ -1,9 +1,38 @@
+function puntuacionPregunta1(cuestionario){
+    alert('hola')
+    if(cuestionario['Mango'].checked==true || cuestionario['Plátano'].checked==true){
+        return 0;
+    }else if(cuestionario['Fresa'].checked == true&&cuestionario['Manzana'].checked==true){
+        return 1;
+    }else if (cuestionario['Fresa'].checked == true || cuestionario['Manzana'].checked==true){
+        return 0.5;
+    }else{
+        return 0;
+    }
+}
+function comprobarSelect(){
+    cuestionario = document.getElementById('cuestionario')
+    let puntuacion = puntuacionPregunta1(cuestionario)
+    switch (puntuacion) {
+        case 1:
+            alert('Respuesta correcta')
+            break;
+        case 0.5:
+            alert('Respuesta parcialmente correcta')
+            break;
+        default:
+            alert('Respuesta incorrecta')
+            break;
+    }
+}
 function calcularResultado(){
     console.log('calcularResultado')
     let puntuación = 0
     let cuestionario = document.getElementById('cuestionario')
     alert(cuestionario['Manzana'].checked)
-    if(cuestionario['Manzana']){
+    if(cuestionario['Mango'].checked || cuestionario['Plátano'].checked){
+        puntuación=0
+    }else if(cuestionario){
 
     }
 }
@@ -20,3 +49,4 @@ function recorrerFormulario() {
 
 document.getElementById('enviar').addEventListener('click',calcularResultado);
 document.getElementById('enviar').addEventListener('click',recorrerFormulario);
+document.getElementById('comprobar1').addEventListener('click',comprobarSelect);
