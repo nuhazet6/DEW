@@ -1,4 +1,8 @@
-fechaRegex = new RegExp(/^(0[1-9]|[12][0-9]|3[01])[\/\-](0[1-9]|1[012])[\/\-]\d{4}$/);
+fechaRegex = /^(0[1-9]|[12][0-9]|3[01])[\/\-](0[1-9]|1[012])[\/\-]\d{4}$/; // del 01 al 09 luego del 10 al 29 después el 30 o 31 / o - del 01 al 09, etc
+nifRegex = /^[0-9]{8}-[a-zA-Z]$/; // 8 números, un guion y una letra al final
+emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; //Cualquier cosa menos espacio o arroba, arroba, cualquier cosa menos espacio y arroba, un punto y cualquier cosa menos espacio y arroba
+telefonoRegex = /^\d{9}$/; // 9 dígitos
+horaRegex = /^([01]\d|2[0-3]):([0-5]\d)$/; // 0 o 1 más dígito o 2 más del 0 al 3 : del 0 al 5 más dígito
 
 document.addEventListener('DOMContentLoaded', function() {
   let campo_nombre = document.getElementById("nombre");
@@ -13,12 +17,11 @@ document.addEventListener('DOMContentLoaded', function() {
     let formulario = document.getElementById("formulario"); 
     let erroresContainer = document.getElementById("errores");
     let intentosContainer = document.getElementById("intentos");
-    let intentos = 0;
+    document.cookie = "intentos=0"
   
     formulario.addEventListener('submit', (event) => {
-      
-      intentos++;
-      intentosContainer.innerHTML = "Intento de Envíos del formulario: " + intentos;
+      document.cookie = int(document.cookies.split('=')[1])++;
+      intentosContainer.innerHTML = "Intento de Envíos del formulario: " + document.cookie.split('=')[1];
   
       let nombre = campo_nombre.value;
       let apellidos = campo_apellidos.value;
@@ -43,13 +46,13 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById("edad").focus();
       }
   
-      let nifRegex = /^[0-9]{8}-[a-zA-Z]$/; // 8 números, un guion y una letra al final
+      
       if (nif === "" || !nifRegex.test(nif)) {
         errores.push("El campo NIF debe tener el formato correcto (12345678-A).");
         document.getElementById("nif").focus();
       }
   
-      let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; //Cualquier cosa menos espacio o arroba, arroba, cualquier cosa menos espacio y arroba, un punto y cualquier cosa menos espacio y arroba
+      
       if (email === "" || !emailRegex.test(email)) {
         errores.push("Por favor, introduzca un correo electrónico válido.");
         document.getElementById("email").focus();
@@ -60,19 +63,19 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById("provincia").focus();
       }
   
-       // Explicación: Formato de fecha dd/mm/aaaa o dd-mm-aaaa
+       
       if (fecha === "" || !fechaRegex.test(fecha)) {
         errores.push("El campo Fecha debe tener el formato dd/mm/aaaa o dd-mm-aaaa.");
         document.getElementById("fecha").focus();
       }
   
-      let telefonoRegex = /^\d{9}$/; // Explicación: 9 dígitos
+      
       if (telefono === "" || !telefonoRegex.test(telefono)) {
         errores.push("El campo Teléfono debe tener 9 dígitos numéricos.");
         document.getElementById("telefono").focus();
       }
   
-      let horaRegex = /^([01]\d|2[0-3]):([0-5]\d)$/; // Explicación: Formato hh:mm
+      
       if (hora === "" || !horaRegex.test(hora)) {
         errores.push("El campo Hora debe tener el formato hh:mm.");
         document.getElementById("hora").focus();
