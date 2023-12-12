@@ -20,10 +20,6 @@ document.addEventListener('DOMContentLoaded', function() {
 	let intentosContainer = document.getElementById("intentos");    
  
 	formulario.addEventListener('submit', (event) => {
-    event.preventDefault()
-   	let intentos = (parseInt(document.cookie.split(';')[0].split('=')[1])+1).toString();   	 
-  	intentosContainer.innerHTML = "Intento de Envíos del formulario: " + intentos;
-    document.cookie = "intentos=" + intentos;
 
     function checkField(value,regex=/.*/){
    	 return value === '' || !regex.test(value) ;
@@ -80,12 +76,16 @@ document.addEventListener('DOMContentLoaded', function() {
   	}
  
   	if (errores.length > 0) {
+		event.preventDefault()
     	erroresContainer.innerHTML = "<ul><li>" + errores.join("</li><li>") + "</li></ul>";
   	}else{
     	let confirmarEnvio = confirm("¿Estás seguro de enviar el formulario?");
-  	if (confirmarEnvio) {
-    	formulario.submit();
+  	if (!confirmarEnvio) {    	
+    	event.preventDefault()
   	}
+	  let intentos = (parseInt(document.cookie.split(';')[0].split('=')[1])+1).toString();   	 
+  	intentosContainer.innerHTML = "Intento de Envíos del formulario: " + intentos;
+    document.cookie = "intentos=" + intentos;
   	} 	 
 	});
     
