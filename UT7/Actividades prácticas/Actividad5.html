@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad5</title>    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        .estilo{
+        background-color:#99FF33;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, quas rem? Quae aspernatur adipisci facilis facere libero molestias magnam tempora ipsam. Itaque nobis nisi facilis molestias maiores iure. Quaerat, unde?</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati quas distinctio impedit molestias saepe corporis, minima iure accusamus. Quaerat molestiae deserunt tenetur quisquam itaque nostrum! Eum fugit voluptas porro voluptatum.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem exercitationem nulla qui beatae tempora explicabo? In deleniti mollitia deserunt? Deleniti fugiat voluptatibus deserunt magni laudantium fugit perspiciatis ipsa non vel.</p>
+
+    </div>
+    <input type="button" value="Añadir clase" id="boton1"><br>
+  <input type="button" value="Quitar clase" id="boton2"><br>
+  
+    <script>
+        $('#boton1').click(function(){
+            $('div').addClass('estilo');
+        });        
+        $('#boton2').click(function(){
+            $('div').removeClass('estilo');
+        }); 
+    </script>
+</body>
+</html>
