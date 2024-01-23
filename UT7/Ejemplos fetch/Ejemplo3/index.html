@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UT7 - Ejemplo Fetch 3: Envío de datos y archivos al servidor</title>
+</head>
+
+<body>
+    <!-- Formulario HTML con campos de texto y archivo -->
+    <form id="miFormulario">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+        <br>
+        <label for="archivo">Archivo:</label>
+        <input type="file" id="archivo" name="archivo" accept=".txt, .pdf" required>
+        <br>
+        <!-- Botón para enviar el formulario -->
+        <button type="button" onclick="enviarFormulario()">Enviar</button>
+    </form>
+
+    <script>
+        // Función para enviar el formulario al servidor
+        function enviarFormulario() {
+            // Obtener referencia al formulario y crear un objeto FormData
+            const formulario = document.getElementById("miFormulario");
+            const datos = new FormData(formulario);
+
+            // Enviar los datos al servidor usando la API Fetch
+            fetch('server.php', {
+                method: 'POST',
+                body: datos
+            })
+            .then(response => response.json())  // Parsear la respuesta como JSON
+            .then(data => {
+                console.log(data);
+                // Puedes realizar acciones adicionales después de recibir la respuesta del servidor
+            })
+            .catch(error => console.error('Error:', error));  // Manejar errores en la comunicación con el servidor
+        }
+    </script>
+</body>
+</html>
